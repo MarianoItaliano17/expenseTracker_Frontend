@@ -48,6 +48,7 @@ export class ExpenseComponent {
         this.message.success('Expense posted succesfully', {
           nzDuration: 5000,
         });
+        this.getAllExpenses();
       },
       (error) => {
         this.message.error('Error while posting expense', { nzDuration: 5000 });

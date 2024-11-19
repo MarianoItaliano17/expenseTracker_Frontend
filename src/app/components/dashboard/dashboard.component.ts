@@ -36,10 +36,10 @@ export class DashboardComponent {
     new Chart(incomeCtx, {
       type: 'line',
       data: {
-        labels: this.incomes.map(income => income.date),
+        labels: this.incomes.map(income => income.date).reverse(),
         datasets: [{
           label: 'Income',
-          data: this.incomes.map(income => income.amount),
+          data: this.incomes.map(income => income.amount).reverse(),
           borderWidth: 1,
           backgroundColor: 'rgb(80, 200, 120)',
           borderColor: 'rgb(0, 100, 0)',
@@ -59,10 +59,10 @@ export class DashboardComponent {
     new Chart(expenseCtx, {
       type: 'line',
       data: {
-        labels: this.expenses.map(income => income.date),
+        labels: this.expenses.map(expense => expense.date).reverse(),
         datasets: [{
           label: 'Expense',
-          data: this.expenses.map(income => income.amount),
+          data: this.expenses.map(expense => expense.amount).reverse(),
           borderWidth: 1,
           backgroundColor: 'rgb(255, 0, 0)',
           borderColor: 'rgb(255, 0, 0)',
