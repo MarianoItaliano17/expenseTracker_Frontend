@@ -1,9 +1,9 @@
 <nz-layout class="layout">
-  <nz-sider>
+  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzCollapsible]="isMobileView" class="sider" [nzBreakpoint]="'md'" >
     <div class="logo">
       <img src="../assets/img/avatar-man-icon-cartoon-male-profile-mascot-illustration-head-face-business-user-logo-free-vector.jpg"
       alt="Avatar" class="avatar">
-      <div class="user-info">
+      <div class="user-info" *ngIf="!isCollapsed">
         <strong>Root</strong>
       </div>
     </div>
@@ -22,6 +22,7 @@
       </li>
     </ul>
   </nz-sider>
+
 
   <nz-layout class="right-layaout">
     <nz-content>

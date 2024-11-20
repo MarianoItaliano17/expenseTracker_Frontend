@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,25 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'expenseTrackerFront';
+
+  isCollapsed = false;
+  isMobileView = false;
+
+  ngOnInit(): void {
+    this.checkViewport();
+  }
+
+  toggleCollapsed(): void {
+    this.isCollapsed = !this.isCollapsed;
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(): void {
+    this.checkViewport();
+  }
+
+  private checkViewport(): void {
+    this.isMobileView = window.innerWidth < 768;
+  }
+
 }
